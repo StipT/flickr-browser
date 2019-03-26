@@ -27,7 +27,6 @@ class FlickrRecyclerViewAdapter extends RecyclerView.Adapter<FlickrRecyclerViewA
 
     @Override
     public FlickrImageViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        // Called by the layout manager when it needs a new view
         Log.d(TAG, "onCreateViewHolder: new view requested");
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.browse, parent, false);
         return new FlickrImageViewHolder(view);
@@ -35,7 +34,6 @@ class FlickrRecyclerViewAdapter extends RecyclerView.Adapter<FlickrRecyclerViewA
 
     @Override
     public void onBindViewHolder(FlickrImageViewHolder holder, int position) {
-        // Called by the layout manager when it wants new data in an existing row
 
         if((mPhotosList == null) || (mPhotosList.size() == 0)) {
             holder.thumbnail.setImageResource(R.drawable.placeholder);

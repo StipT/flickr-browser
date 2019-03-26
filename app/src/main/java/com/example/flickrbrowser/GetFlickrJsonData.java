@@ -3,11 +3,9 @@ package com.example.flickrbrowser;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.util.Log;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -113,8 +111,6 @@ class GetFlickrJsonData extends AsyncTask<String, Void, List<Photo>> implements 
         }
 
         if(runningOnSameThread && mCallBack != null) {
-            // now inform the caller that processing is done - possibly returning null if there
-            // was an error
             mCallBack.onDataAvailable(mPhotoList, status);
         }
 
